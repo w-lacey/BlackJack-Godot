@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy1lyw3w5pm1i"]
+
+[ext_resource type="Script" path="res://Scripts/GameTable.gd" id="1_wna5d"]
+[ext_resource type="Texture2D" uid="uid://x4eo7dlimdth" path="res://Assets/card-back1.png" id="2_ogn23"]
+[ext_resource type="Texture2D" uid="uid://caks3ratbxwcc" path="res://Assets/card-back1-disabled.png" id="3_bkyqw"]
+[ext_resource type="Texture2D" uid="uid://bjcescjvawq4u" path="res://Assets/card-back1-Hover.png" id="3_u6mlm"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wna5d")
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuBar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.84
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StayButton" type="Button" parent="MenuBar"]
+layout_mode = 0
+anchor_left = 0.0208333
+anchor_top = 0.384615
+anchor_right = 0.0347222
+anchor_bottom = 0.538462
+text = "stay"
+metadata/_edit_use_anchors_ = true
+
+[node name="HandValue" type="Label" parent="MenuBar"]
+layout_mode = 0
+anchor_left = 0.868056
+anchor_top = 0.384615
+anchor_right = 0.902778
+anchor_bottom = 0.605769
+metadata/_edit_use_anchors_ = true
+
+[node name="Action" type="Label" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482639
+anchor_top = 0.389423
+anchor_right = 0.517361
+anchor_bottom = 0.610577
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GameBoard" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.827
+offset_bottom = 8.104
+grow_horizontal = 2
+color = Color(0, 0.756863, 0, 1)
+
+[node name="PlayArea" type="VBoxContainer" parent="GameBoard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222222
+anchor_top = 0.0147059
+anchor_right = 0.777778
+anchor_bottom = 0.926471
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DealerSpace" type="GridContainer" parent="GameBoard/PlayArea"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerSpace" type="GridContainer" parent="GameBoard/PlayArea"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HitButton" type="TextureButton" parent="GameBoard"]
+layout_mode = 2
+anchor_left = 0.902778
+anchor_top = 0.0441176
+anchor_right = 0.986111
+anchor_bottom = 0.308824
+texture_normal = ExtResource("2_ogn23")
+texture_hover = ExtResource("3_u6mlm")
+texture_disabled = ExtResource("3_bkyqw")
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="GameBoard"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 32.0
+offset_bottom = 32.0
+text = "New"
+
+[node name="NewGameWindow" type="Window" parent="."]
+initial_position = 2
+visible = false
+always_on_top = true
+
+[node name="NewGameWindowLabel" type="Label" parent="NewGameWindow"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "New Game?"
+horizontal_alignment = 1
+
+[node name="NewGameYesButton" type="Button" parent="NewGameWindow"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 35.0
+grow_vertical = 0
+text = "Yes"
+
+[node name="NewGameNoButton" type="Button" parent="NewGameWindow"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "No"

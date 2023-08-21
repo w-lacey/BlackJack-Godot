@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dfukb7xjssb75"]
+
+[node name="test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.483073
+anchor_right = 0.516927
+anchor_bottom = 0.0401235
+grow_horizontal = 2
+text = "hello
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -64.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "WRITE IN YOUR TEXCT HERE!!!"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.049
+anchor_right = 1.0
+anchor_bottom = 0.901
+offset_top = 0.247999
+offset_bottom = 0.151978
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 8

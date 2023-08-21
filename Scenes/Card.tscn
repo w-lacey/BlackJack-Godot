@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdhlrab186xfj"]
+
+[ext_resource type="Texture2D" uid="uid://bm6hsi6onjx7g" path="res://Assets/blank card.png" id="1_amotn"]
+
+[node name="CardContainer" type="AspectRatioContainer"]
+custom_minimum_size = Vector2(50, 150)
+anchors_preset = -1
+anchor_left = 0.413194
+anchor_top = 0.268519
+anchor_right = 0.545458
+anchor_bottom = 0.621753
+offset_right = 47.6318
+offset_bottom = 71.1045
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.761841, 0.762985)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 0.6722
+metadata/_edit_use_anchors_ = true
+
+[node name="CardBody" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_amotn")
+
+[node name="CardSymbol" type="TextureRect" parent="CardBody"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.124701
+anchor_top = 0.176456
+anchor_right = 0.324701
+anchor_bottom = 0.309789
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="CardSymbol2" type="TextureRect" parent="CardBody"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63662
+anchor_top = 0.687444
+anchor_right = 0.861619
+anchor_bottom = 0.820777
+offset_left = -2.28882e-05
+offset_top = -3.05176e-05
+offset_right = -1.52588e-05
+offset_bottom = -3.05176e-05
+expand_mode = 3
+stretch_mode = 5
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="rankSymbol" type="TextureRect" parent="CardBody"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.124701
+anchor_top = 0.0310887
+anchor_right = 0.324701
+anchor_bottom = 0.165529
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="rankSymbol2" type="TextureRect" parent="CardBody"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.656309
+anchor_top = 0.841621
+anchor_right = 0.856309
+anchor_bottom = 0.976061
+offset_left = -1.52588e-05
+offset_right = -1.52588e-05
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyxdno5ytd2oq"]
+
+[ext_resource type="Script" path="res://Scripts/GameTable.gd" id="1_40pba"]
+
+[node name="GameTable" type="GridContainer"]
+script = ExtResource("1_40pba")
