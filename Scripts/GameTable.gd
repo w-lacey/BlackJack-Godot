@@ -1,11 +1,10 @@
 extends Control
 
 
-@onready var deckInstance = preload("res://Scripts/Deck.gd")
-@onready var playerInstance = preload("res://Scripts/Player.gd")
+@onready var deck_instance = preload("res://Scripts/Deck.gd")
+@onready var player_instance = preload("res://Scripts/Player.gd")
 @onready var cardInstance = preload("res://Scripts/Card.gd")
-@onready var cardscene = preload('res://scenes/Card.tscn')
-
+@onready var card_scene = preload('res://scenes/Card.tscn')
 @onready var menu_bar: ColorRect = $MenuBar
 @onready var stay_button: Button = $MenuBar/StayButton
 @onready var hand_value: Label = $MenuBar/HandValue
@@ -48,10 +47,10 @@ func gameSetup():
 	
 	hit_button.disabled = false
 	new_game_window.visible = false
-	self.deck = deckInstance.new()
-	self.player = playerInstance.new()
-	self.dealer = playerInstance.new()
-	self.person = playerInstance.new()
+	self.deck = deck_instance.new()
+	self.player = player_instance.new()
+	self.dealer = player_instance.new()
+	self.person = player_instance.new()
 	
 	player.setPlayerName("Player")
 	dealer.setPlayerName("Dealer")
@@ -97,7 +96,7 @@ func printHand():
 	
 	for i in range(playerHand.size()):
 		var card = cardInstance.new(playerHand[i].getSuit(), playerHand[i].getRank())		
-		var cardS = cardscene.instantiate()	
+		var cardS = card_scene.instantiate()	
 		playerGrid.add_child(cardS)
 		cardS.get_node("CardBody/CardSymbol").texture = card.getTexture()
 		cardS.get_node("CardBody/CardSymbol2").texture = card.getTexture()
@@ -107,7 +106,7 @@ func printHand():
 
 	for i in range(dealerHand.size()):
 		var card = cardInstance.new(dealerHand[i].getSuit(), dealerHand[i].getRank())	
-		var cardS = cardscene.instantiate()
+		var cardS = card_scene.instantiate()
 		if(i == 0):
 			cardS.get_node("CardBody/CardSymbol").texture = card.getTexture()
 			cardS.get_node("CardBody/CardSymbol2").texture = card.getTexture()
@@ -143,7 +142,6 @@ func _stay():
 	gameLoop()
 	
 func _button_pressed():
-	
 	
 	player.setPlayerHand(deck.drawCard())
 	

@@ -3,34 +3,32 @@ extends Node
 
 class_name Deck
 
-var cardInstance = preload("res://Scripts/Card.gd")
-var cardscene = preload('res://scenes/Card.tscn')
+var card_instance = preload("res://Scripts/Card.gd")
 
-var deckList = []
+var deck_list = []
 
 func _init() -> void:
-	for suit in cardInstance.Suit:
-		for rank in cardInstance.Rank:
-			var card = cardInstance.new(suit, rank);
-			#print(card.getSuit(), " of ", card.getRank())
-			deckList.append(card)
-		self.deckList.shuffle()		
+	for suit in card_instance.SUIT:
+		for rank in card_instance.RANK:
+			var card = card_instance.new(suit, rank);
+			deck_list.append(card)
+		self.deck_list.shuffle()		
 		cardTextures()
 	
 func getDeck():
-	return deckList
+	return deck_list
 
 func drawCard():
 	
-	var card = cardInstance.new(deckList[0].getSuit(), deckList[0].getRank())
-	card = deckList[0]
-	self.deckList.remove_at(0)
+	var card = card_instance.new(deck_list[0].getSuit(), deck_list[0].getRank())
+	card = deck_list[0]
+	self.deck_list.remove_at(0)
 	return card
 
 func cardTextures():
-	var cardList = []
-	for suit in cardInstance.Suit:
-		for rank in cardInstance.Rank:
-			var card = cardInstance.new(suit, rank);
+	var card_list = []
+	for suit in card_instance.SUIT:
+		for rank in card_instance.RANK:
+			var card = card_instance.new(suit, rank);
 			#print(card.getSuit(), " of ", card.getRank())
-			cardList.append(card)
+			card_list.append(card)

@@ -1,16 +1,18 @@
 extends ColorRect
 
-var cardTexture
-var rankSymbol
+var card_texture
+var rank_symbol
+var card_suit : String
+var card_rank : String
 
-enum Suit{
+enum SUIT{
 	CLUBS, 
 	DIAMONDS, 
 	HEARTS,
 	SPADES
 }
 
-enum Rank{
+enum RANK{
 	ACE = 1,
 	TWO = 2,
 	THREE = 3,
@@ -25,11 +27,8 @@ enum Rank{
 	QUEEN = 12,
 	KING = 13
 }
-var card_suit : String
-var card_rank : String
 
 func _init(card_rank = "TWO", card_suit ="HEARTS"):
-	
 	self.card_rank = card_rank
 	self.card_suit = card_suit
 
@@ -38,15 +37,16 @@ func getSuit():
 	
 func getRank():
 	return card_rank
+	
 func getCardValue():
-	var cardValue = Rank.get(card_rank)
-	return cardValue
+	var card_value = RANK.get(card_rank)
+	return card_value
 	
 func getRankSymbol():
-	rankSymbol = load("res://Assets/symbols/rankSymbols/%s.png" % card_rank)
-	return rankSymbol
+	rank_symbol = load("res://Assets/symbols/rankSymbols/%s.png" % card_rank)
+	return rank_symbol
 	
 func getTexture():
-	cardTexture = load("res://Assets/symbols/%s.png" % card_suit)
-	return cardTexture
+	card_texture = load("res://Assets/symbols/%s.png" % card_suit)
+	return card_texture
 	
